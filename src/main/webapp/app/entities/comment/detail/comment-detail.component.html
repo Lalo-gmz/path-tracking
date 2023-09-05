@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="comment">
+      <h2 data-cy="commentDetailsHeading"><span jhiTranslate="l2EApp.comment.detail.title">Comment</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ comment.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.comment.content">Content</span></dt>
+        <dd>
+          <span>{{ comment.content }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.comment.applicationUser">Application User</span></dt>
+        <dd>
+          <div *ngIf="comment.applicationUser">
+            <a [routerLink]="['/application-user', comment.applicationUser.id, 'view']">{{ comment.applicationUser.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.comment.learningPath">Learning Path</span></dt>
+        <dd>
+          <div *ngIf="comment.learningPath">
+            <a [routerLink]="['/learning-path', comment.learningPath.id, 'view']">{{ comment.learningPath.name }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+      </button>
+
+      <button type="button" [routerLink]="['/comment', comment.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

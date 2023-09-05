@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="status">
+      <h2 data-cy="statusDetailsHeading"><span jhiTranslate="l2EApp.status.detail.title">Status</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ status.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.status.name">Name</span></dt>
+        <dd>
+          <span>{{ status.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.status.order">Order</span></dt>
+        <dd>
+          <span>{{ status.order }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+      </button>
+
+      <button type="button" [routerLink]="['/status', status.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

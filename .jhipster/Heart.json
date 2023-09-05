@@ -1,0 +1,27 @@
+{
+  "applications": "*",
+  "changelogDate": "20230904161921",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "heart",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Heart",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "applicationUser",
+      "relationshipName": "applicationUser",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "learningPath",
+      "relationshipName": "learningPath",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

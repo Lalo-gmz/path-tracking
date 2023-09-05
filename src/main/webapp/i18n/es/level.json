@@ -1,0 +1,27 @@
+{
+  "l2EApp": {
+    "level": {
+      "home": {
+        "title": "Levels",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Level",
+        "createOrEditLabel": "Crear o editar Level",
+        "notFound": "Ningún Levels encontrado"
+      },
+      "created": "Un nuevo Level ha sido creado con el identificador {{ param }}",
+      "updated": "Un Level ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Level ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Level {{ id }}?"
+      },
+      "detail": {
+        "title": "Level"
+      },
+      "id": "ID",
+      "name": "Name",
+      "order": "Order",
+      "minExpe": "Min Expe",
+      "applicationUser": "Application User"
+    }
+  }
+}

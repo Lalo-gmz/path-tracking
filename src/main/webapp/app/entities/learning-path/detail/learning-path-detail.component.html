@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="learningPath">
+      <h2 data-cy="learningPathDetailsHeading"><span jhiTranslate="l2EApp.learningPath.detail.title">Learning Path</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ learningPath.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.learningPath.name">Name</span></dt>
+        <dd>
+          <span>{{ learningPath.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.learningPath.description">Description</span></dt>
+        <dd>
+          <span>{{ learningPath.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.learningPath.applicationUser">Application User</span></dt>
+        <dd>
+          <div *ngIf="learningPath.applicationUser">
+            <a [routerLink]="['/application-user', learningPath.applicationUser.id, 'view']">{{ learningPath.applicationUser.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.learningPath.createdBy">Created By</span></dt>
+        <dd>
+          <div *ngIf="learningPath.createdBy">
+            <a [routerLink]="['/application-user', learningPath.createdBy.id, 'view']">{{ learningPath.createdBy.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+      </button>
+
+      <button type="button" [routerLink]="['/learning-path', learningPath.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

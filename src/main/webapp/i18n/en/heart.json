@@ -1,0 +1,25 @@
+{
+  "l2EApp": {
+    "heart": {
+      "home": {
+        "title": "Hearts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Heart",
+        "createOrEditLabel": "Create or edit a Heart",
+        "notFound": "No Hearts found"
+      },
+      "created": "A new Heart is created with identifier {{ param }}",
+      "updated": "A Heart is updated with identifier {{ param }}",
+      "deleted": "A Heart is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Heart {{ id }}?"
+      },
+      "detail": {
+        "title": "Heart"
+      },
+      "id": "ID",
+      "applicationUser": "Application User",
+      "learningPath": "Learning Path"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="heart">
+      <h2 data-cy="heartDetailsHeading"><span jhiTranslate="l2EApp.heart.detail.title">Heart</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ heart.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.heart.applicationUser">Application User</span></dt>
+        <dd>
+          <div *ngIf="heart.applicationUser">
+            <a [routerLink]="['/application-user', heart.applicationUser.id, 'view']">{{ heart.applicationUser.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.heart.learningPath">Learning Path</span></dt>
+        <dd>
+          <div *ngIf="heart.learningPath">
+            <a [routerLink]="['/learning-path', heart.learningPath.id, 'view']">{{ heart.learningPath.name }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+      </button>
+
+      <button type="button" [routerLink]="['/heart', heart.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

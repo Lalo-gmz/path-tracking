@@ -1,0 +1,77 @@
+
+entity LearningPath {
+  name String required minlength(3) maxlength(100)
+  description TextBlob
+}
+
+relationship ManyToOne {
+  LearningPath{ApplicationUser} to ApplicationUser
+  Comment{ApplicationUser} to ApplicationUser
+  Heart{ApplicationUser} to ApplicationUser
+}
+
+entity Comment {
+  content String required
+}
+
+entity Task {
+  name String required minlength(3) maxlength(100)
+  description TextBlob
+  experience Long
+}
+
+entity Status{
+	name String required minlength(3) maxlength(100)
+	order Integer
+}
+
+entity Heart {
+}
+
+entity Dificulty {
+	name String required
+    points Integer
+}
+
+relationship OneToMany {
+  ApplicationUser{learningPaths} to LearningPath{createdBy}
+  Dificulty{tasks(name)} to Task{dificulties(name)}
+}
+
+relationship ManyToOne {
+  Heart{learningPath(name)} to LearningPath
+}
+
+relationship OneToMany {
+  LearningPath{comments} to Comment{learningPath(name)}
+}
+
+relationship OneToMany {
+  LearningPath{tasks} to Task{learningPath(name)}
+  Status{tasks(name)} to Task{status(name)}
+  Level{ApplicationUser} to ApplicationUser{level(name)}
+  
+}
+
+entity Level {
+	name String required
+    order Integer
+    minExpe Integer
+}
+
+entity ApplicationUser {
+  additionalField Integer min(42) max(42)
+  nickname String
+  img String
+  experience Long
+  bio TextBlob
+}
+
+
+
+relationship OneToOne {
+  ApplicationUser{internalUser(login)} to User
+}
+
+use serviceClass for *
+paginate * with pagination

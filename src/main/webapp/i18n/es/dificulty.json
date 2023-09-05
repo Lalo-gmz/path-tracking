@@ -1,0 +1,26 @@
+{
+  "l2EApp": {
+    "dificulty": {
+      "home": {
+        "title": "Dificulties",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Dificulty",
+        "createOrEditLabel": "Crear o editar Dificulty",
+        "notFound": "Ningún Dificulties encontrado"
+      },
+      "created": "Un nuevo Dificulty ha sido creado con el identificador {{ param }}",
+      "updated": "Un Dificulty ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Dificulty ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Dificulty {{ id }}?"
+      },
+      "detail": {
+        "title": "Dificulty"
+      },
+      "id": "ID",
+      "name": "Name",
+      "points": "Points",
+      "tasks": "Tasks"
+    }
+  }
+}

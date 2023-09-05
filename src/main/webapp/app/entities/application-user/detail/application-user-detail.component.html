@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="applicationUser">
+      <h2 data-cy="applicationUserDetailsHeading"><span jhiTranslate="l2EApp.applicationUser.detail.title">Application User</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ applicationUser.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.applicationUser.additionalField">Additional Field</span></dt>
+        <dd>
+          <span>{{ applicationUser.additionalField }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.applicationUser.nickname">Nickname</span></dt>
+        <dd>
+          <span>{{ applicationUser.nickname }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.applicationUser.img">Img</span></dt>
+        <dd>
+          <span>{{ applicationUser.img }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.applicationUser.experience">Experience</span></dt>
+        <dd>
+          <span>{{ applicationUser.experience }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.applicationUser.bio">Bio</span></dt>
+        <dd>
+          <span>{{ applicationUser.bio }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.applicationUser.internalUser">Internal User</span></dt>
+        <dd>
+          <span>{{ applicationUser.internalUser?.login }}</span>
+        </dd>
+        <dt><span jhiTranslate="l2EApp.applicationUser.level">Level</span></dt>
+        <dd>
+          <div *ngIf="applicationUser.level">
+            <a [routerLink]="['/level', applicationUser.level.id, 'view']">{{ applicationUser.level.name }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Volver</span>
+      </button>
+
+      <button type="button" [routerLink]="['/application-user', applicationUser.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editar</span>
+      </button>
+    </div>
+  </div>
+</div>

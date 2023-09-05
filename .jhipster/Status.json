@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20230904161920",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "status",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "100",
+      "fieldValidateRulesMinlength": "3"
+    },
+    {
+      "fieldName": "order",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Status",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "task",
+      "otherEntityRelationshipName": "status",
+      "relationshipName": "tasks",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

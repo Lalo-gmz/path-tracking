@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20230904161917",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "learning_path",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "100",
+      "fieldValidateRulesMinlength": "3"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "LearningPath",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "comment",
+      "otherEntityRelationshipName": "learningPath",
+      "relationshipName": "comments",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "task",
+      "otherEntityRelationshipName": "learningPath",
+      "relationshipName": "tasks",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "applicationUser",
+      "relationshipName": "applicationUser",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "learningPaths",
+      "relationshipName": "createdBy",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

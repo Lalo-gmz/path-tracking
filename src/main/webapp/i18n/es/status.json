@@ -1,0 +1,26 @@
+{
+  "l2EApp": {
+    "status": {
+      "home": {
+        "title": "Statuses",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Status",
+        "createOrEditLabel": "Crear o editar Status",
+        "notFound": "Ningún Statuses encontrado"
+      },
+      "created": "Un nuevo Status ha sido creado con el identificador {{ param }}",
+      "updated": "Un Status ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Status ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Status"
+      },
+      "id": "ID",
+      "name": "Name",
+      "order": "Order",
+      "tasks": "Tasks"
+    }
+  }
+}

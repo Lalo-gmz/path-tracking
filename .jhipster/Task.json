@@ -1,0 +1,54 @@
+{
+  "applications": "*",
+  "changelogDate": "20230904161919",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "task",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "100",
+      "fieldValidateRulesMinlength": "3"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "experience",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Task",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "dificulty",
+      "otherEntityRelationshipName": "tasks",
+      "relationshipName": "dificulties",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "learningPath",
+      "otherEntityRelationshipName": "tasks",
+      "relationshipName": "learningPath",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "status",
+      "otherEntityRelationshipName": "tasks",
+      "relationshipName": "status",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

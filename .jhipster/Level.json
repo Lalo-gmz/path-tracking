@@ -1,0 +1,36 @@
+{
+  "applications": "*",
+  "changelogDate": "20230904161923",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "level",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "order",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minExpe",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Level",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "level",
+      "relationshipName": "applicationUser",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

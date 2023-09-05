@@ -1,0 +1,29 @@
+{
+  "l2EApp": {
+    "learningPath": {
+      "home": {
+        "title": "Learning Paths",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Learning Path",
+        "createOrEditLabel": "Crear o editar Learning Path",
+        "notFound": "Ningún Learning Paths encontrado"
+      },
+      "created": "Un nuevo Learning Path ha sido creado con el identificador {{ param }}",
+      "updated": "Un Learning Path ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Learning Path ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Learning Path {{ id }}?"
+      },
+      "detail": {
+        "title": "Learning Path"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "comments": "Comments",
+      "tasks": "Tasks",
+      "applicationUser": "Application User",
+      "createdBy": "Created By"
+    }
+  }
+}

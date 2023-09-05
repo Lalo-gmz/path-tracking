@@ -1,0 +1,130 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-task-heading" data-cy="TaskCreateUpdateHeading" jhiTranslate="l2EApp.task.home.createOrEditLabel">Crear o editar Task</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="l2EApp.task.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+              Este campo es obligatorio.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('name')?.errors?.minlength"
+              jhiTranslate="entity.validation.minlength"
+              [translateValues]="{ min: 3 }"
+            >
+              Este campo requiere al menos 3 caracteres.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('name')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              Este campo no puede superar más de 100 caracteres.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="l2EApp.task.description" for="field_description">Description</label>
+          <textarea
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          ></textarea>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="l2EApp.task.experience" for="field_experience">Experience</label>
+          <input
+            type="number"
+            class="form-control"
+            name="experience"
+            id="field_experience"
+            data-cy="experience"
+            formControlName="experience"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="l2EApp.task.dificulties" for="field_dificulties">Dificulties</label>
+          <select
+            class="form-control"
+            id="field_dificulties"
+            data-cy="dificulties"
+            name="dificulties"
+            formControlName="dificulties"
+            [compareWith]="compareDificulty"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="dificultyOption" *ngFor="let dificultyOption of dificultiesSharedCollection">
+              {{ dificultyOption.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="l2EApp.task.learningPath" for="field_learningPath">Learning Path</label>
+          <select
+            class="form-control"
+            id="field_learningPath"
+            data-cy="learningPath"
+            name="learningPath"
+            formControlName="learningPath"
+            [compareWith]="compareLearningPath"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="learningPathOption" *ngFor="let learningPathOption of learningPathsSharedCollection">
+              {{ learningPathOption.name }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="l2EApp.task.status" for="field_status">Status</label>
+          <select
+            class="form-control"
+            id="field_status"
+            data-cy="status"
+            name="status"
+            formControlName="status"
+            [compareWith]="compareStatus"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="statusOption" *ngFor="let statusOption of statusesSharedCollection">{{ statusOption.name }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancelar</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Guardar</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

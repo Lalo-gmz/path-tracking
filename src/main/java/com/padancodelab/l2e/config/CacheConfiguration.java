@@ -48,6 +48,20 @@ public class CacheConfiguration {
             createCache(cm, com.padancodelab.l2e.domain.User.class.getName());
             createCache(cm, com.padancodelab.l2e.domain.Authority.class.getName());
             createCache(cm, com.padancodelab.l2e.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.padancodelab.l2e.domain.LearningPath.class.getName());
+            createCache(cm, com.padancodelab.l2e.domain.LearningPath.class.getName() + ".comments");
+            createCache(cm, com.padancodelab.l2e.domain.LearningPath.class.getName() + ".tasks");
+            createCache(cm, com.padancodelab.l2e.domain.Comment.class.getName());
+            createCache(cm, com.padancodelab.l2e.domain.Task.class.getName());
+            createCache(cm, com.padancodelab.l2e.domain.Status.class.getName());
+            createCache(cm, com.padancodelab.l2e.domain.Status.class.getName() + ".tasks");
+            createCache(cm, com.padancodelab.l2e.domain.Heart.class.getName());
+            createCache(cm, com.padancodelab.l2e.domain.Dificulty.class.getName());
+            createCache(cm, com.padancodelab.l2e.domain.Dificulty.class.getName() + ".tasks");
+            createCache(cm, com.padancodelab.l2e.domain.Level.class.getName());
+            createCache(cm, com.padancodelab.l2e.domain.Level.class.getName() + ".applicationUsers");
+            createCache(cm, com.padancodelab.l2e.domain.ApplicationUser.class.getName());
+            createCache(cm, com.padancodelab.l2e.domain.ApplicationUser.class.getName() + ".learningPaths");
             // jhipster-needle-ehcache-add-entry
         };
     }
